@@ -1,0 +1,22 @@
+age_M_mid = 0
+age_W_mid = 0
+count_M = 0
+count_W = 0
+
+while True :
+    input_data = input ('Ввести имя, фамилия, пол M/W , возраст ')
+    if input_data.upper() == 'Q' :
+        break
+    else :
+        name , surname , gender , age = input_data.split(' ')
+        age = int(age)
+        if gender == "M" :
+            count_M += 1
+            age_M_mid = (age + age_M_mid * ( count_M - 1 )) / count_M
+         
+        elif gender == "W" :
+             count_W += 1
+             age_W_mid = (age + age_W_mid * ( count_W - 1 )) / count_W   
+        else :
+            print("Ошибка ввода M/W ")
+print(f"Средний возраст мужчин : {age_M_mid} .Средний возраст женщин : {age_W_mid}")
